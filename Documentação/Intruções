@@ -1,0 +1,59 @@
+Documentação do Projeto - API de Consulta de CNPJ com Login e Cadastro
+
+1. Introdução
+O projeto é uma API de consulta de CNPJ que requer autenticação. 
+Para utilizar a API, os usuários precisam realizar o cadastro e login. 
+Após a autenticação, eles têm acesso à funcionalidade de consulta de CNPJ, 
+que fornece análises detalhadas das informações relacionadas ao CNPJ consultado.
+
+2. Estrutura de Pastas e Arquivos
+index.php: Página inicial com formulário de login.
+cadastro.php: Página de cadastro para novos usuários.
+processa_login.php: Script para processar informações de login.
+processa_cadastro.php: Script para processar informações de cadastro.
+consulta_cnpj.php: Página protegida por login para consulta de CNPJ e exibição detalhada.
+includes/
+db.php: Configuração da conexão com o banco de dados.
+functions.php: Funções utilitárias, como manipulação de sessão, geração de token CSRF, etc.
+csrf_token.php: Geração e exibição do token CSRF.
+login_form.php: Formulário de login (incluído em index.php).
+register_form.php: Formulário de cadastro (incluído em cadastro.php).
+confirmacao_email.php: Página para confirmação de e-mail após cadastro.
+
+3. Tecnologias Utilizadas
+PHP: Linguagem de programação server-side.
+HTML e CSS: Estrutura e estilos para a interface web.
+JavaScript (jQuery): Utilizado para realizar chamadas assíncronas para a API de consulta de CNPJ.
+MySQL: Banco de dados para armazenar informações de usuários.
+
+4. Funcionalidades Principais
+4.1. Página de Login (index.php)
+Formulário de login com campos para nome de usuário e senha.
+Proteção CSRF para prevenir ataques de falsificação de solicitação entre sites.
+Link para a página de cadastro para novos usuários.
+4.2. Página de Cadastro (cadastro.php)
+Formulário de cadastro com campos para nome de usuário, e-mail, senha e confirmação.
+Proteção CSRF.
+Verificação de existência de nome de usuário e e-mail antes do cadastro.
+Envio de e-mail de confirmação após o cadastro.
+4.3. Confirmação de E-mail (confirmacao_email.php)
+Página para confirmação de e-mail após o cadastro.
+Acesso por meio de link enviado por e-mail.
+Atualização do banco de dados para confirmar o e-mail.
+4.4. Consulta de CNPJ (consulta_cnpj.php)
+Página protegida por login. Usuário é redirecionado para o login se não estiver autenticado.
+Interface simples para inserção de CNPJ e exibição de informações correspondentes.
+Utilização da API externa (receitaws.com.br) para obter dados relacionados ao CNPJ.
+
+5. Boas Práticas e Melhorias Futuras
+Segurança: Implementação de práticas seguras para autenticação e confirmação de e-mail.
+Validações: Aprimorar validações de entrada nos scripts de processamento.
+Feedback ao Usuário: Melhorar mensagens de erro e sucesso para uma melhor experiência do usuário.
+Responsividade: Considerar tornar a aplicação mais responsiva para dispositivos móveis.
+
+6. Considerações Finais
+Este projeto fornece uma API de consulta de CNPJ com autenticação e cadastro de usuários. 
+Certifique-se de manter as bibliotecas e dependências atualizadas. 
+A segurança e a confirmação de e-mail são elementos cruciais para a funcionalidade bem-sucedida do sistema. 
+
+* Projeto em aprimoramento para atender às necessidades específicas...
